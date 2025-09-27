@@ -3,9 +3,13 @@
 This is my personal portfolio website built with **React, Tailwind CSS, Vite, and JavaScript**.  
 It showcases my **skills, education, projects, and experience** as a frontend developer.
 
-🚀 Live Demo: [Coming Soon / Your Vercel Link]
+🚀 Live Demo: https://ali-portfolio-nine.vercel.app/
 
 ---
+
+## Note
+
+If the projects live preview is not working open portfolio on incogonito tab and then check there, If also not working click on code button and you can direct on my github now here you can check it.
 
 ## 👨‍💻 About Me
 
