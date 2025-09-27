@@ -123,9 +123,10 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-10 px-3 sm:py-16 sm:px-6 lg:py-20 lg:px-8 bg-gradient-to-b from-transparent to-card/20"
+      className="py-10 px-4 sm:py-16 sm:px-6 lg:py-20 lg:px-8 bg-gradient-to-b from-transparent to-card/20"
     >
-      <div className="container mx-auto">
+      <div className="max-w-6xl mx-auto">
+        {/* Heading */}
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4">
             Get In <span className="gradient-text">Touch</span>
@@ -135,14 +136,15 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 max-w-6xl mx-auto">
-          {/* Contact Information */}
-          <div className="space-y-8 animate-slide-up">
+        {/* Contact Info + Form */}
+        <div className="grid gap-10 lg:gap-16 lg:grid-cols-2">
+          {/* Left: Info */}
+          <div className="flex flex-col gap-8 min-w-0 animate-slide-up">
             <div>
               <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">
                 Let's start a conversation
               </h3>
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-6 sm:mb-8">
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                 I'm always interested in hearing about new opportunities,
                 whether that's a project, a job opportunity, or just a chat
                 about technology. Feel free to reach out through any of the
@@ -155,13 +157,13 @@ const Contact = () => {
               {contactInfo.map((info, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-4 p-4 portfolio-card animate-bounce-in text-sm sm:text-base"
+                  className="flex items-center gap-4 p-3 sm:p-4 portfolio-card animate-bounce-in text-sm sm:text-base"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className="p-3 rounded-lg bg-primary/10 text-primary">
+                  <div className="p-2 rounded-lg bg-primary/10 text-primary">
                     {info.icon}
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <p className="font-semibold">{info.label}</p>
                     {info.href ? (
                       <a
@@ -178,7 +180,7 @@ const Contact = () => {
               ))}
             </div>
 
-            {/* Social links */}
+            {/* Social Links */}
             <div>
               <h4 className="font-semibold mb-3 sm:mb-4">
                 Follow me on social media
@@ -199,7 +201,7 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Quick response note */}
+            {/* Quick response */}
             <div className="p-4 bg-primary/10 rounded-lg border border-primary/20 text-sm sm:text-base">
               <div className="flex items-start gap-3">
                 <MessageCircle className="w-5 h-5 text-primary mt-0.5" />
@@ -216,10 +218,10 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Contact Form */}
-          <div className="animate-slide-up [animation-delay:0.3s]">
+          {/* Right: Form */}
+          <div className="min-w-0 animate-slide-up [animation-delay:0.3s]">
             <form onSubmit={handleSubmit} className="portfolio-card space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label
                     htmlFor="name"
@@ -234,7 +236,9 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-3 py-3 sm:px-4 rounded-lg bg-input border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all duration-300 text-sm sm:text-base"
+                    className="w-full px-3 py-3 sm:px-4 rounded-lg bg-input border border-border 
+                      focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none 
+                      transition-all duration-300 text-sm sm:text-base"
                     placeholder="Your full name"
                   />
                 </div>
@@ -252,7 +256,9 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-3 py-3 sm:px-4 rounded-lg bg-input border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all duration-300 text-sm sm:text-base"
+                    className="w-full px-3 py-3 sm:px-4 rounded-lg bg-input border border-border 
+                      focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none 
+                      transition-all duration-300 text-sm sm:text-base"
                     placeholder="your.email@example.com"
                   />
                 </div>
@@ -271,7 +277,9 @@ const Contact = () => {
                   name="subject"
                   value={formData.subject}
                   onChange={handleInputChange}
-                  className="w-full px-3 py-3 sm:px-4 rounded-lg bg-input border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all duration-300 text-sm sm:text-base"
+                  className="w-full px-3 py-3 sm:px-4 rounded-lg bg-input border border-border 
+                    focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none 
+                    transition-all duration-300 text-sm sm:text-base"
                   placeholder="What's this about?"
                 />
               </div>
@@ -290,7 +298,9 @@ const Contact = () => {
                   onChange={handleInputChange}
                   required
                   rows={6}
-                  className="w-full px-3 py-3 sm:px-4 rounded-lg bg-input border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all duration-300 resize-none text-sm sm:text-base"
+                  className="w-full px-3 py-3 sm:px-4 rounded-lg bg-input border border-border 
+                    focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none 
+                    transition-all duration-300 resize-none text-sm sm:text-base"
                   placeholder="Tell me about your project or just say hello..."
                 />
               </div>
@@ -298,7 +308,10 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full flex items-center justify-center gap-3 px-4 py-3 sm:px-6 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/80 transition-all duration-300 hover:shadow-glow disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
+                className="w-full flex items-center justify-center gap-3 px-4 py-3 sm:px-6 
+                  bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/80 
+                  transition-all duration-300 hover:shadow-glow disabled:opacity-50 
+                  disabled:cursor-not-allowed text-sm sm:text-base"
               >
                 {isSubmitting ? (
                   <>

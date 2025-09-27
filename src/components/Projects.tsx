@@ -13,7 +13,7 @@ import youtubeImage from "../../public/youtube-image.png";
 import googleImg from "../../public/google-image.png";
 import textChangerImg from "../../public/textchanger-image.png";
 import nexcentImg from "../../public/nexcent-image.png";
-import animationImg from "../../public//animation-image.png";
+import animationImg from "../../public/animation-image.png";
 import netflixImg from "../../public/netflix-image.png";
 import pokemonImg from "../../public/pokemon-image.png";
 
@@ -51,90 +51,7 @@ const Projects = () => {
       status: "Completed",
       features: ["Responsive design", "Modern UI", "Grid & Flexbox layout"],
     },
-    {
-      id: 3,
-      title: "Google UI Clone",
-      description:
-        "Google search page clone designed with Tailwind CSS. Pixel-perfect, responsive layout.",
-      image: googleImg,
-      technologies: ["HTML5", "Tailwind CSS"],
-      category: "web",
-      demoUrl:
-        "https://syed-muhammad-ali-git.github.io/Tailwind-Assignments/google-ui/index.html",
-      codeUrl:
-        "https://github.com/Syed-Muhammad-Ali-git/Tailwind-Assignments/tree/master/google-ui",
-      status: "Completed",
-      features: ["Clean UI", "Mobile-friendly", "Simple design"],
-    },
-    {
-      id: 4,
-      title: "Text Changer",
-      description:
-        "A small interactive JavaScript project that allows real-time text transformation.",
-      image: textChangerImg,
-      technologies: ["JavaScript", "HTML5", "CSS3"],
-      category: "web",
-      demoUrl: "https://syed-muhammad-ali-git.github.io/Text-changer/",
-      codeUrl: "https://github.com/Syed-Muhammad-Ali-git/Text-changer",
-      status: "Completed",
-      features: ["Interactive UI", "Dynamic text update", "Beginner friendly"],
-    },
-    {
-      id: 5,
-      title: "Nexcent Website",
-      description:
-        "A modern business website design built with Tailwind CSS, showcasing corporate layout.",
-      image: nexcentImg,
-      technologies: ["Tailwind CSS", "HTML5", "CSS3"],
-      category: "web",
-      demoUrl: "https://syed-muhammad-ali-git.github.io/Nexcent/",
-      codeUrl: "https://github.com/Syed-Muhammad-Ali-git/Nexcent",
-      status: "Completed",
-      features: [
-        "Corporate layout",
-        "Responsive design",
-        "Reusable components",
-      ],
-    },
-    {
-      id: 6,
-      title: "Animation Website",
-      description:
-        "A visually appealing website using CSS animations and modern design principles.",
-      image: animationImg,
-      technologies: ["HTML5", "CSS3", "JavaScript"],
-      category: "web",
-      demoUrl: "https://syed-muhammad-ali-git.github.io/Animation-website/",
-      codeUrl: "https://github.com/Syed-Muhammad-Ali-git/Animation-website",
-      status: "Completed",
-      features: ["CSS animations", "Creative UI", "Lightweight project"],
-    },
-    {
-      id: 7,
-      title: "Netflix Clone",
-      description:
-        "A frontend clone of Netflix showcasing modern UI layout and responsiveness.",
-      image: netflixImg,
-      technologies: ["HTML5", "CSS3", "JavaScript"],
-      category: "web",
-      demoUrl: "https://syed-muhammad-ali-git.github.io/sites-clone-netflix/",
-      codeUrl: "https://github.com/Syed-Muhammad-Ali-git/sites-clone-netflix",
-      status: "Completed",
-      features: ["Modern UI", "Responsive design", "Popular layout"],
-    },
-    {
-      id: 8,
-      title: "Pokémon Clone",
-      description:
-        "A simple Pokémon-themed website clone built with HTML, CSS, and JavaScript.",
-      image: pokemonImg,
-      technologies: ["HTML5", "CSS3", "JavaScript"],
-      category: "web",
-      demoUrl: "https://syed-muhammad-ali-git.github.io/Pokemon-clone/",
-      codeUrl: "https://github.com/Syed-Muhammad-Ali-git/Pokemon-clone",
-      status: "Completed",
-      features: ["Fun design", "Interactive UI", "Lightweight project"],
-    },
+    // ... baaki projects
   ];
 
   const filters = [
@@ -152,6 +69,7 @@ const Projects = () => {
   return (
     <section id="projects" className="py-20 px-4">
       <div className="container mx-auto">
+        {/* Heading */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Featured <span className="gradient-text">Projects</span>
@@ -191,7 +109,7 @@ const Projects = () => {
             filteredProjects.map((project, index) => (
               <div
                 key={project.id}
-                className="portfolio-card group cursor-pointer overflow-hidden animate-fade-in"
+                className="portfolio-card group cursor-pointer overflow-hidden animate-fade-in px-4 sm:px-6"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {/* Project image */}
@@ -243,7 +161,16 @@ const Projects = () => {
                       {project.title}
                     </h3>
                     <p className="text-muted-foreground text-sm leading-relaxed">
-                      {project.description}
+                      {/* Mobile short preview */}
+                      <span className="sm:hidden">
+                        {project.description.split(" ").slice(0, 12).join(" ")}…{" "}
+                        <span className="italic text-muted-foreground">
+                          see on desktop
+                        </span>
+                      </span>
+                      <span className="hidden sm:inline">
+                        {project.description}
+                      </span>
                     </p>
                   </div>
 
@@ -275,15 +202,14 @@ const Projects = () => {
                   </div>
 
                   {/* Action buttons */}
-                  <div className="flex items-center gap-3 pt-2">
+                  <div className="flex items-center gap-3 pt-2 flex-wrap">
                     <a
                       href={project.demoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/80 transition-colors duration-300 text-sm font-medium"
                     >
-                      <ExternalLink size={16} />
-                      Live Demo
+                      <ExternalLink size={16} /> Live Demo
                     </a>
                     <a
                       href={project.codeUrl}
@@ -291,8 +217,7 @@ const Projects = () => {
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 px-4 py-2 bg-card/50 border border-border rounded-lg hover:bg-card transition-colors duration-300 text-sm font-medium"
                     >
-                      <Github size={16} />
-                      Code
+                      <Github size={16} /> Code
                     </a>
                   </div>
                 </div>
