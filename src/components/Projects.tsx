@@ -51,7 +51,84 @@ const Projects = () => {
       status: "Completed",
       features: ["Responsive design", "Modern UI", "Grid & Flexbox layout"],
     },
-    // ... baaki projects
+    {
+      id: 3,
+      title: "Google Clone",
+      description:
+        "Google homepage clone built using HTML and CSS with pixel-perfect layout.",
+      image: googleImg,
+      technologies: ["HTML5", "CSS3"],
+      category: "web",
+      demoUrl: "https://syed-muhammad-ali-git.github.io/Google-Clone/",
+      codeUrl: "https://github.com/Syed-Muhammad-Ali-git/Google-Clone",
+      status: "Completed",
+      features: ["Pixel-perfect design", "Responsive layout", "Simple UI"],
+    },
+    {
+      id: 4,
+      title: "Nexcent Website",
+      description: "A modern responsive landing page built using Tailwind CSS.",
+      image: nexcentImg,
+      technologies: ["Tailwind CSS", "HTML5"],
+      category: "web",
+      demoUrl: "https://syed-muhammad-ali-git.github.io/Nexcent-Website/",
+      codeUrl: "https://github.com/Syed-Muhammad-Ali-git/Nexcent-Website",
+      status: "Completed",
+      features: ["Landing page", "Responsive design", "Tailwind utilities"],
+    },
+    {
+      id: 5,
+      title: "CSS Animation Showcase",
+      description:
+        "Creative CSS animations demonstrating transitions and keyframes.",
+      image: animationImg,
+      technologies: ["CSS3", "HTML5"],
+      category: "design",
+      demoUrl: "https://syed-muhammad-ali-git.github.io/CSS-Animation/",
+      codeUrl: "https://github.com/Syed-Muhammad-Ali-git/CSS-Animation",
+      status: "Completed",
+      features: ["Keyframe animations", "Hover effects", "Transitions"],
+    },
+    {
+      id: 6,
+      title: "Text Changer App",
+      description:
+        "A text manipulation tool with features like uppercase, lowercase, trimming spaces, and copy.",
+      image: textChangerImg,
+      technologies: ["React", "Tailwind CSS"],
+      category: "web",
+      demoUrl: "https://textchangerapp.vercel.app/",
+      codeUrl: "https://github.com/Syed-Muhammad-Ali-git/Text-Changer-App",
+      status: "Completed",
+      features: ["Uppercase & lowercase", "Copy text", "Remove spaces"],
+    },
+
+    {
+      id: 7,
+      title: "Netflix Clone",
+      description:
+        "A Netflix-inspired UI clone built with HTML, CSS, and JavaScript.",
+      image: netflixImg,
+      technologies: ["JavaScript", "HTML5", "CSS3"],
+      category: "web",
+      demoUrl: "https://syed-muhammad-ali-git.github.io/Netflix-Clone/",
+      codeUrl: "https://github.com/Syed-Muhammad-Ali-git/Netflix-Clone",
+      status: "Completed",
+      features: ["Responsive design", "Carousel UI", "Dark theme"],
+    },
+    {
+      id: 8,
+      title: "Pokémon App",
+      description:
+        "A fun Pokémon app fetching data from Pokémon API and displaying it in a styled UI.",
+      image: pokemonImg,
+      technologies: ["React", "API", "Tailwind CSS"],
+      category: "web",
+      demoUrl: "https://pokemon-app-ali.vercel.app/",
+      codeUrl: "https://github.com/Syed-Muhammad-Ali-git/Pokemon-App",
+      status: "Completed",
+      features: ["API integration", "Search Pokémon", "Responsive grid"],
+    },
   ];
 
   const filters = [
