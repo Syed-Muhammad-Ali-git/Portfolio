@@ -14,7 +14,7 @@ import googleImg from "../../public/google-image.png";
 import textChangerImg from "../../public/textchanger-image.png";
 import nexcentImg from "../../public/nexcent-image.png";
 import animationImg from "../../public/animation-image.png";
-import netflixImg from "../../public/netflix-image.png";
+import olxImg from "../../public/olx-img.png";
 import pokemonImg from "../../public/pokemon-image.png";
 
 const Projects = () => {
@@ -29,8 +29,7 @@ const Projects = () => {
       image: javascriptImage,
       technologies: ["JavaScript", "HTML5", "CSS3"],
       category: "web",
-      demoUrl:
-        "https://syed-muhammad-ali-git.github.io/Javasscript-assignments/",
+      demoUrl: "https://javasscript-assignments.vercel.app/",
       codeUrl:
         "https://github.com/Syed-Muhammad-Ali-git/Javasscript-assignments",
       status: "Completed",
@@ -44,8 +43,7 @@ const Projects = () => {
       image: youtubeImage,
       technologies: ["HTML5", "Tailwind CSS"],
       category: "web",
-      demoUrl:
-        "https://syed-muhammad-ali-git.github.io/Tailwind-Assignments/youtube-clone/index.html",
+      demoUrl: "http://tailwind-assignment.surge.sh/youtube-clone/index.html",
       codeUrl:
         "https://github.com/Syed-Muhammad-Ali-git/Tailwind-Assignments/tree/master/youtube-clone",
       status: "Completed",
@@ -59,7 +57,7 @@ const Projects = () => {
       image: googleImg,
       technologies: ["HTML5", "CSS3"],
       category: "web",
-      demoUrl: "https://syed-muhammad-ali-git.github.io/Google-Clone/",
+      demoUrl: "http://tailwind-assignment.surge.sh/google-ui/index.html",
       codeUrl: "https://github.com/Syed-Muhammad-Ali-git/Google-Clone",
       status: "Completed",
       features: ["Pixel-perfect design", "Responsive layout", "Simple UI"],
@@ -71,7 +69,7 @@ const Projects = () => {
       image: nexcentImg,
       technologies: ["Tailwind CSS", "HTML5"],
       category: "web",
-      demoUrl: "https://syed-muhammad-ali-git.github.io/Nexcent-Website/",
+      demoUrl: "https://nexcentclone.surge.sh/",
       codeUrl: "https://github.com/Syed-Muhammad-Ali-git/Nexcent-Website",
       status: "Completed",
       features: ["Landing page", "Responsive design", "Tailwind utilities"],
@@ -84,7 +82,7 @@ const Projects = () => {
       image: animationImg,
       technologies: ["CSS3", "HTML5"],
       category: "design",
-      demoUrl: "https://syed-muhammad-ali-git.github.io/CSS-Animation/",
+      demoUrl: "http://animation-website.surge.sh/",
       codeUrl: "https://github.com/Syed-Muhammad-Ali-git/CSS-Animation",
       status: "Completed",
       features: ["Keyframe animations", "Hover effects", "Transitions"],
@@ -97,7 +95,7 @@ const Projects = () => {
       image: textChangerImg,
       technologies: ["React", "Tailwind CSS"],
       category: "web",
-      demoUrl: "https://textchangerapp.vercel.app/",
+      demoUrl: "https://text-changer.surge.sh/",
       codeUrl: "https://github.com/Syed-Muhammad-Ali-git/Text-Changer-App",
       status: "Completed",
       features: ["Uppercase & lowercase", "Copy text", "Remove spaces"],
@@ -105,17 +103,26 @@ const Projects = () => {
 
     {
       id: 7,
-      title: "Netflix Clone",
+      title: "OLX Clone",
       description:
-        "A Netflix-inspired UI clone built with HTML, CSS, and JavaScript.",
-      image: netflixImg,
-      technologies: ["JavaScript", "HTML5", "CSS3"],
+        "A classifieds marketplace UI (OLX-style) built with HTML, CSS, and JavaScript — lets users browse categories, search/filter listings, view listing details, and contact sellers. Deployed on Surge for a fast static demo.",
+      image: olxImg,
+      technologies: ["JavaScript", "HTML5", "CSS3", "Surge.sh"],
       category: "web",
-      demoUrl: "https://syed-muhammad-ali-git.github.io/Netflix-Clone/",
-      codeUrl: "https://github.com/Syed-Muhammad-Ali-git/Netflix-Clone",
+      demoUrl: "http://olx-by-ali.surge.sh/",
+      codeUrl: "https://github.com/Syed-Muhammad-Ali-git/olx-clone", // adjust if your repo name differs
       status: "Completed",
-      features: ["Responsive design", "Carousel UI", "Dark theme"],
+      features: [
+        "Responsive marketplace layout",
+        "Search & filter listings",
+        "Category browsing",
+        "Listing details modal/page",
+        "Create & manage listings (UI)",
+        "Contact seller / message modal",
+        "Client-side image previews for uploads",
+      ],
     },
+
     {
       id: 8,
       title: "Pokémon App",
@@ -124,7 +131,7 @@ const Projects = () => {
       image: pokemonImg,
       technologies: ["React", "API", "Tailwind CSS"],
       category: "web",
-      demoUrl: "https://pokemon-app-ali.vercel.app/",
+      demoUrl: "https://pokemon-clone-lake.vercel.app/",
       codeUrl: "https://github.com/Syed-Muhammad-Ali-git/Pokemon-App",
       status: "Completed",
       features: ["API integration", "Search Pokémon", "Responsive grid"],
