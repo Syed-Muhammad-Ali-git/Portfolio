@@ -1,8 +1,14 @@
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 
 export default {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -62,9 +68,9 @@ export default {
         "gradient-border": "var(--gradient-border)",
       },
       boxShadow: {
-        "soft": "var(--shadow-soft)",
-        "glow": "var(--shadow-glow)",
-        "intense": "var(--shadow-intense)",
+        soft: "var(--shadow-soft)",
+        glow: "var(--shadow-glow)",
+        intense: "var(--shadow-intense)",
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -73,7 +79,7 @@ export default {
         "slide-up": "slide-up 0.6s ease-out",
         "bounce-in": "bounce-in 0.8s ease-out",
         "pulse-glow": "pulse-glow 2s ease-in-out infinite",
-        "typing": "typing 3.5s steps(40, end), blink 0.75s step-end infinite",
+        typing: "typing 3.5s steps(40, end), blink 0.75s step-end infinite",
       },
       keyframes: {
         "accordion-down": {
@@ -102,16 +108,16 @@ export default {
           "0%, 100%": { boxShadow: "var(--shadow-glow)" },
           "50%": { boxShadow: "0 0 60px hsl(177 91% 52% / 0.25)" },
         },
-        "typing": {
-          "from": { width: "0" },
-          "to": { width: "100%" },
+        typing: {
+          from: { width: "0" },
+          to: { width: "100%" },
         },
-        "blink": {
+        blink: {
           "from, to": { borderColor: "transparent" },
           "50%": { borderColor: "hsl(var(--primary))" },
         },
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [tailwindcssAnimate],
 } satisfies Config;

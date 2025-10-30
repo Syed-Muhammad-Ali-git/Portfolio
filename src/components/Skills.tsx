@@ -1,42 +1,47 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 const Skills = () => {
-  const [activeCategory, setActiveCategory] = useState('frontend');
+  const [activeCategory, setActiveCategory] = useState("frontend");
 
   const skillCategories = {
     frontend: {
-      title: 'Frontend Development',
+      title: "Frontend Development",
       skills: [
-        { name: 'HTML5', level: 95, icon: '🏗️' },
-        { name: 'CSS3', level: 90, icon: '🎨' },
-        { name: 'JavaScript (ES6)', level: 85, icon: '⚡' },
-        { name: 'React.js', level: 80, icon: '⚛️' },
-        { name: 'Tailwind CSS', level: 88, icon: '💨' },
-        { name: 'Bootstrap', level: 85, icon: '📱' },
-      ]
+        { name: "HTML5", level: 95, icon: "🏗️" },
+        { name: "CSS3", level: 90, icon: "🎨" },
+        { name: "Bootstrap", level: 85, icon: "📱" },
+        { name: "JavaScript (ES6)", level: 85, icon: "⚡" },
+        { name: "Tailwind CSS", level: 88, icon: "💨" },
+        { name: "React.js", level: 80, icon: "⚛️" },
+        { name: "Typescript", level: 85, icon: "🅣" },
+        { name: "Next.js", level: 80, icon: "🅽" },
+      ],
     },
     backend: {
-      title: 'Backend & Tools',
+      title: "Backend & Tools",
       skills: [
-        { name: 'Node.js', level: 75, icon: '🟢' },
-        { name: 'GitHub', level: 85, icon: '🐙' },
-        { name: 'MS Office', level: 90, icon: '📊' },
-        { name: 'WordPress', level: 80, icon: '📝' },
-      ]
+        { name: "Node.js", level: 75, icon: "🟢" },
+        { name: "GitHub", level: 85, icon: "🐙" },
+        { name: "MS Office", level: 90, icon: "📊" },
+        { name: "WordPress", level: 80, icon: "📝" },
+      ],
     },
     learning: {
-      title: 'Currently Learning',
+      title: "Currently Learning",
       skills: [
-        { name: 'MERN Stack', level: 70, icon: '🚀' },
-        { name: 'MongoDB', level: 65, icon: '🍃' },
-        { name: 'Express.js', level: 60, icon: '🚂' },
-        { name: 'Full Stack Development', level: 68, icon: '🌐' },
-      ]
-    }
+        { name: "MERN Stack", level: 70, icon: "🚀" },
+        { name: "Firebase", level: 65, icon: "🍃" },
+        { name: "Express.js", level: 60, icon: "🚂" },
+        { name: "Full Stack Development", level: 68, icon: "🌐" },
+      ],
+    },
   };
 
   return (
-    <section id="skills" className="py-20 px-4 bg-gradient-to-b from-transparent to-card/20">
+    <section
+      id="skills"
+      className="py-20 px-4 bg-gradient-to-b from-transparent to-card/20"
+    >
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -56,8 +61,8 @@ const Skills = () => {
                 onClick={() => setActiveCategory(key)}
                 className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                   activeCategory === key
-                    ? 'bg-primary text-primary-foreground shadow-glow'
-                    : 'hover:bg-card/80 text-muted-foreground hover:text-foreground'
+                    ? "bg-primary text-primary-foreground shadow-glow"
+                    : "hover:bg-card/80 text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {category.title}
@@ -69,7 +74,9 @@ const Skills = () => {
         {/* Skills grid */}
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2 gap-6">
-            {skillCategories[activeCategory as keyof typeof skillCategories].skills.map((skill, index) => (
+            {skillCategories[
+              activeCategory as keyof typeof skillCategories
+            ].skills.map((skill, index) => (
               <div
                 key={skill.name}
                 className="portfolio-card group animate-fade-in"
@@ -82,14 +89,14 @@ const Skills = () => {
                   </div>
                   <span className="text-primary font-bold">{skill.level}%</span>
                 </div>
-                
+
                 <div className="relative">
                   <div className="w-full h-2 bg-muted rounded-full overflow-hidden">
                     <div
                       className="h-full bg-gradient-primary rounded-full transition-all duration-1000 ease-out group-hover:shadow-glow"
                       style={{
                         width: `${skill.level}%`,
-                        animationDelay: `${index * 0.2}s`
+                        animationDelay: `${index * 0.2}s`,
                       }}
                     />
                   </div>

@@ -106,12 +106,14 @@ const About = () => {
               <p className="hidden sm:block text-lg leading-relaxed">
                 I have experience in{" "}
                 <span className="text-primary">
-                  HTML, CSS, JavaScript, React,
+                  HTML, CSS, JavaScript, React, Next
                 </span>{" "}
                 and modern frontend frameworks. I also have hands-on experience
                 with{" "}
-                <span className="text-primary">MS Office and WordPress</span>,
-                and I am currently enrolled in a Full Stack / MERN Stack
+                <span className="text-primary">
+                  Typescript and also WordPress
+                </span>
+                , and I am currently enrolled in a Full Stack / MERN Stack
                 Development course at
                 <span className="text-primary"> Saylani SMIT</span>.
               </p>

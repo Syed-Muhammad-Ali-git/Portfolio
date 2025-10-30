@@ -54,9 +54,9 @@ const Hero = () => {
     education: 'ADP Software Engineering',
     university: 'Ilma University',
     skills: [
-        'HTML5', 'CSS3', 'JavaScript',
-        'React.js', 'Tailwind CSS',
-        'Node.js', 'GitHub'
+        'HTML5', 'CSS3', 'JavaScript ES6', 'Typescript',
+        'React.js', 'Next.js' ,'Tailwind CSS',
+        'Node.js', 'GitHub', 'Vercel'
     ],
     passionate: true,
     quickLearner: true,
@@ -118,9 +118,16 @@ const Hero = () => {
             <a
               href="/Ali_CV.pdf"
               download="Ali_CV.pdf"
-              className="btn-ghost text-xs sm:text-base px-3 py-2"
+              className="btn-ghost text-xs sm:text-base px-3 py-3"
             >
-              <Download size={16} className="mr-2" />
+              <Download
+                size={16}
+                className="mr-2"
+                style={{
+                  display: "inline",
+                  marginBottom: "4px",
+                }}
+              />
               Get Resume
             </a>
           </div>
