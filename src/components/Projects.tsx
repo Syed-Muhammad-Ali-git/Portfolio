@@ -16,6 +16,10 @@ import nexcentImg from "../../public/nexcent-image.png";
 import animationImg from "../../public/animation-image.png";
 import olxImg from "../../public/olx-img.png";
 import pokemonImg from "../../public/pokemon-image.png";
+import appmashImg from "../../public/appmash-home.png";
+import t3allImg from "../../public/t3all-home.png";
+import mybindleImg from "../../public/mybindle.png";
+import socialMediaImg from "../../public/socialmedia-app.png";
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -23,6 +27,60 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
+      title: "AppMash Website",
+      description:
+        "A modern web application UI built for the AppMash platform.",
+      image: appmashImg,
+      technologies: ["React", "JavaScript", "CSS3"],
+      category: "web",
+      demoUrl: "https://app-mash.vercel.app/",
+      codeUrl: null,
+      status: "Completed",
+      features: ["Modern UI", "Responsive Design", "Web App Interface"],
+    },
+
+    {
+      id: 2,
+      title: "T3ALL Restaurant Website",
+      description: "A restaurant-style website UI for T3ALL.",
+      image: t3allImg,
+      technologies: ["HTML5", "CSS3", "JavaScript"],
+      category: "web",
+      demoUrl: "https://t3aldevaliui.netlify.app/",
+      codeUrl: null,
+      status: "Completed",
+      features: ["Restaurant UI", "Responsive Layout", "Interactive Elements"],
+    },
+
+    {
+      id: 3,
+      title: "MyBindle Website",
+      description: "A website UI for MyBindle platform.",
+      image: mybindleImg,
+      technologies: ["React", "JavaScript", "CSS3"],
+      category: "web",
+      demoUrl: "https://my-bindle-website-react.vercel.app/",
+      codeUrl: "https://github.com/Syed-Muhammad-Ali-git/Mybindle-react",
+      status: "Completed",
+      features: ["Web UI", "React Components", "Responsive Design"],
+    },
+
+    {
+      id: 4,
+      title: "Social Media App",
+      description:
+        "A social media application with local storage using HTML, CSS, and JavaScript.",
+      image: socialMediaImg,
+      technologies: ["HTML5", "CSS3", "JavaScript", "Local Storage"],
+      category: "web",
+      demoUrl: "https://socialmedia-app-ali.vercel.app/",
+      codeUrl:
+        "https://github.com/Syed-Muhammad-Ali-git/socialmedia-app-html-bootstrap",
+      status: "Completed",
+      features: ["Local Storage", "User Interface", "Social Features"],
+    },
+    {
+      id: 5,
       title: "JavaScript Assignments",
       description:
         "Collection of JavaScript assignments covering core concepts, logic building, and DOM manipulation.",
@@ -36,7 +94,7 @@ const Projects = () => {
       features: ["Core JS concepts", "Logic building", "DOM manipulation"],
     },
     {
-      id: 2,
+      id: 6,
       title: "YouTube Clone",
       description:
         "A frontend clone of YouTube built using Tailwind CSS with responsive UI.",
@@ -50,7 +108,7 @@ const Projects = () => {
       features: ["Responsive design", "Modern UI", "Grid & Flexbox layout"],
     },
     {
-      id: 3,
+      id: 7,
       title: "Google Clone",
       description:
         "Google homepage clone built using HTML and CSS with pixel-perfect layout.",
@@ -63,7 +121,7 @@ const Projects = () => {
       features: ["Pixel-perfect design", "Responsive layout", "Simple UI"],
     },
     {
-      id: 4,
+      id: 8,
       title: "Nexcent Website",
       description: "A modern responsive landing page built using Tailwind CSS.",
       image: nexcentImg,
@@ -75,7 +133,7 @@ const Projects = () => {
       features: ["Landing page", "Responsive design", "Tailwind utilities"],
     },
     {
-      id: 5,
+      id: 9,
       title: "CSS Animation Showcase",
       description:
         "Creative CSS animations demonstrating transitions and keyframes.",
@@ -88,7 +146,7 @@ const Projects = () => {
       features: ["Keyframe animations", "Hover effects", "Transitions"],
     },
     {
-      id: 6,
+      id: 10,
       title: "Text Changer App",
       description:
         "A text manipulation tool with features like uppercase, lowercase, trimming spaces, and copy.",
@@ -102,7 +160,7 @@ const Projects = () => {
     },
 
     {
-      id: 7,
+      id: 11,
       title: "OLX Clone",
       description:
         "A classifieds marketplace UI (OLX-style) built with HTML, CSS, and JavaScript — lets users browse categories, search/filter listings, view listing details, and contact sellers. Deployed on Surge for a fast static demo.",
@@ -124,7 +182,7 @@ const Projects = () => {
     },
 
     {
-      id: 8,
+      id: 12,
       title: "Pokémon App",
       description:
         "A fun Pokémon app fetching data from Pokémon API and displaying it in a styled UI.",
