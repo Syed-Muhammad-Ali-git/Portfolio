@@ -1,23 +1,23 @@
-import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+
+const navItems = [
+  { id: "home", label: "Home", icon: "🏠" },
+  { id: "about", label: "About", icon: "👨‍💻" },
+  { id: "skills", label: "Skills", icon: "🚀" },
+  { id: "education", label: "Education", icon: "🎓" },
+  { id: "experience", label: "Experience", icon: "💼" },
+  { id: "projects", label: "Projects", icon: "📂" },
+  { id: "contact", label: "Contact", icon: "📧" },
+];
 
 const Navigation = () => {
-  const [activeSection, setActiveSection] = useState('home');
+  const [activeSection, setActiveSection] = useState("home");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const navItems = [
-    { id: 'home', label: 'Home', icon: '🏠' },
-    { id: 'about', label: 'About', icon: '👨‍💻' },
-    { id: 'skills', label: 'Skills', icon: '🚀' },
-    { id: 'education', label: 'Education', icon: '🎓' },
-    { id: 'experience', label: 'Experience', icon: '💼' },
-    { id: 'projects', label: 'Projects', icon: '📂' },
-    { id: 'contact', label: 'Contact', icon: '📧' },
-  ];
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = navItems.map(item => document.getElementById(item.id));
+      const sections = navItems.map((item) => document.getElementById(item.id));
       const scrollPosition = window.scrollY + 100;
 
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -29,14 +29,14 @@ const Navigation = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
     setIsMenuOpen(false);
   };
@@ -51,7 +51,7 @@ const Navigation = () => {
               key={item.id}
               onClick={() => scrollToSection(item.id)}
               className={`nav-pill flex items-center gap-2 ${
-                activeSection === item.id ? 'active' : ''
+                activeSection === item.id ? "active" : ""
               }`}
             >
               <span className="text-xs">{item.icon}</span>
@@ -77,7 +77,7 @@ const Navigation = () => {
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
                 className={`w-full px-4 py-3 text-left flex items-center gap-3 hover:bg-primary/10 transition-all duration-200 ${
-                  activeSection === item.id ? 'text-primary bg-primary/5' : ''
+                  activeSection === item.id ? "text-primary bg-primary/5" : ""
                 }`}
               >
                 <span>{item.icon}</span>

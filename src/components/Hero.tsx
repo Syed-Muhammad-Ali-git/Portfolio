@@ -9,14 +9,15 @@ import {
 } from "lucide-react";
 import profilePhoto from "@/assets/ali-profile.png";
 
+const titles = [
+  "Frontend Developer",
+  "React Enthusiast",
+  "UI/UX Lover",
+  "Code Creator",
+];
+
 const Hero = () => {
   const [displayText, setDisplayText] = useState("");
-  const titles = [
-    "Frontend Developer",
-    "React Enthusiast",
-    "UI/UX Lover",
-    "Code Creator",
-  ];
   const [titleIndex, setTitleIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -46,7 +47,7 @@ const Hero = () => {
     );
 
     return () => clearTimeout(timeout);
-  }, [charIndex, isDeleting, titleIndex, titles]);
+  }, [charIndex, isDeleting, titleIndex]);
 
   const codeContent = `const profile = {
     name: 'Syed Muhammad Ali',
