@@ -1,392 +1,207 @@
-import { useState } from "react";
-import {
-  ExternalLink,
-  Github,
-  Eye,
-  Code,
-  Palette,
-  Smartphone,
-  Globe,
-} from "lucide-react";
-import javascriptImage from "../../public/javascript-image.png";
-import youtubeImage from "../../public/youtube-image.png";
-import googleImg from "../../public/google-image.png";
-import textChangerImg from "../../public/textchanger-image.png";
-import nexcentImg from "../../public/nexcent-image.png";
-import animationImg from "../../public/animation-image.png";
-import olxImg from "../../public/olx-img.png";
-import pokemonImg from "../../public/pokemon-image.png";
-import appmashImg from "../../public/appmash-home.png";
-import t3allImg from "../../public/t3all-home.png";
-import mybindleImg from "../../public/mybindle.png";
-import socialMediaImg from "../../public/socialmedia-app.png";
+import { motion } from 'framer-motion';
+import { useInView } from 'framer-motion';
+import { useRef } from 'react';
+import { ExternalLink, Github, Folder } from 'lucide-react';
+
+const reactProjects = [
+  {
+    title: 'AppMash Website',
+    description: 'A modern web application UI built for the AppMash platform with responsive design.',
+    tech: ['React', 'JavaScript', 'CSS3'],
+    github: '',
+    live: 'https://app-mash.vercel.app/',
+  },
+  {
+    title: 'MyBindle Website',
+    description: 'A website UI for MyBindle platform with React components and responsive design.',
+    tech: ['React', 'JavaScript', 'CSS3'],
+    github: 'https://github.com/Syed-Muhammad-Ali-git/Mybindle-react',
+    live: 'https://my-bindle-website-react.vercel.app/',
+  },
+  {
+    title: 'Text Changer App',
+    description: 'A text manipulation tool with features like uppercase, lowercase, trimming spaces, and copy.',
+    tech: ['React', 'Tailwind CSS'],
+    github: 'https://github.com/Syed-Muhammad-Ali-git/Text-Changer-App',
+    live: 'https://text-changer.surge.sh/',
+  },
+  {
+    title: 'Pokémon App',
+    description: 'A fun Pokémon app fetching data from Pokémon API and displaying it in a styled UI.',
+    tech: ['React', 'API', 'Tailwind CSS'],
+    github: 'https://github.com/Syed-Muhammad-Ali-git/Pokemon-App',
+    live: 'https://pokemon-clone-lake.vercel.app/',
+  },
+];
+
+const webProjects = [
+  {
+    title: 'T3ALL Restaurant Website',
+    description: 'A restaurant-style website UI with responsive layout and interactive elements.',
+    tech: ['HTML5', 'CSS3', 'JavaScript'],
+    github: '',
+    live: 'https://t3aldevaliui.netlify.app/',
+  },
+  {
+    title: 'Social Media App',
+    description: 'A social media application with local storage using HTML, CSS, and JavaScript.',
+    tech: ['HTML5', 'CSS3', 'JavaScript', 'Local Storage'],
+    github: 'https://github.com/Syed-Muhammad-Ali-git/socialmedia-app-html-bootstrap',
+    live: 'https://socialmedia-app-ali.vercel.app/',
+  },
+  {
+    title: 'OLX Clone',
+    description: 'A classifieds marketplace UI with search/filter listings, category browsing, and listing details.',
+    tech: ['JavaScript', 'HTML5', 'CSS3'],
+    github: 'https://github.com/Syed-Muhammad-Ali-git/olx-clone',
+    live: 'http://olx-by-ali.surge.sh/',
+  },
+  {
+    title: 'YouTube Clone',
+    description: 'A frontend clone of YouTube built using Tailwind CSS with responsive UI.',
+    tech: ['HTML5', 'Tailwind CSS'],
+    github: 'https://github.com/Syed-Muhammad-Ali-git/Tailwind-Assignments/tree/master/youtube-clone',
+    live: 'http://tailwind-assignment.surge.sh/youtube-clone/index.html',
+  },
+  {
+    title: 'Google Clone',
+    description: 'Google homepage clone built using HTML and CSS with pixel-perfect layout.',
+    tech: ['HTML5', 'CSS3'],
+    github: 'https://github.com/Syed-Muhammad-Ali-git/Google-Clone',
+    live: 'http://tailwind-assignment.surge.sh/google-ui/index.html',
+  },
+  {
+    title: 'Nexcent Website',
+    description: 'A modern responsive landing page built using Tailwind CSS.',
+    tech: ['Tailwind CSS', 'HTML5'],
+    github: 'https://github.com/Syed-Muhammad-Ali-git/Nexcent-Website',
+    live: 'https://nexcentclone.surge.sh/',
+  },
+];
+
+interface ProjectCardProps {
+  project: {
+    title: string;
+    description: string;
+    tech: string[];
+    github: string;
+    live: string;
+  };
+  index: number;
+  isInView: boolean;
+}
+
+const ProjectCard = ({ project, index, isInView }: ProjectCardProps) => (
+  <motion.div
+    initial={{ opacity: 0, y: 40 }}
+    animate={isInView ? { opacity: 1, y: 0 } : {}}
+    transition={{ duration: 0.6, delay: index * 0.1 }}
+    className="project-card group"
+  >
+    {/* Project Header */}
+    <div className="p-6 border-b border-border">
+      <div className="flex items-start justify-between mb-4">
+        <div className="p-2 rounded-lg bg-primary/10 text-primary">
+          <Folder size={24} />
+        </div>
+        <div className="flex gap-3">
+          {project.github && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="View on GitHub"
+            >
+              <Github size={20} />
+            </a>
+          )}
+          <a
+            href={project.live}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-primary transition-colors"
+            aria-label="View live site"
+          >
+            <ExternalLink size={20} />
+          </a>
+        </div>
+      </div>
+      <h3 className="font-display text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+        {project.title}
+      </h3>
+      <p className="text-muted-foreground text-sm leading-relaxed">
+        {project.description}
+      </p>
+    </div>
+    {/* Tech Stack */}
+    <div className="p-6 pt-4">
+      <div className="flex flex-wrap gap-2">
+        {project.tech.map((tech) => (
+          <span key={tech} className="text-xs text-muted-foreground font-medium">
+            {tech}
+          </span>
+        ))}
+      </div>
+    </div>
+  </motion.div>
+);
 
 const Projects = () => {
-  const [activeFilter, setActiveFilter] = useState("all");
-
-  const projects = [
-    {
-      id: 1,
-      title: "AppMash Website",
-      description:
-        "A modern web application UI built for the AppMash platform.",
-      image: appmashImg,
-      technologies: ["React", "JavaScript", "CSS3"],
-      category: "web",
-      demoUrl: "https://app-mash.vercel.app/",
-      codeUrl: null,
-      status: "Completed",
-      features: ["Modern UI", "Responsive Design", "Web App Interface"],
-    },
-
-    {
-      id: 2,
-      title: "T3ALL Restaurant Website",
-      description: "A restaurant-style website UI for T3ALL.",
-      image: t3allImg,
-      technologies: ["HTML5", "CSS3", "JavaScript"],
-      category: "web",
-      demoUrl: "https://t3aldevaliui.netlify.app/",
-      codeUrl: null,
-      status: "Completed",
-      features: ["Restaurant UI", "Responsive Layout", "Interactive Elements"],
-    },
-
-    {
-      id: 3,
-      title: "MyBindle Website",
-      description: "A website UI for MyBindle platform.",
-      image: mybindleImg,
-      technologies: ["React", "JavaScript", "CSS3"],
-      category: "web",
-      demoUrl: "https://my-bindle-website-react.vercel.app/",
-      codeUrl: "https://github.com/Syed-Muhammad-Ali-git/Mybindle-react",
-      status: "Completed",
-      features: ["Web UI", "React Components", "Responsive Design"],
-    },
-
-    {
-      id: 4,
-      title: "Social Media App",
-      description:
-        "A social media application with local storage using HTML, CSS, and JavaScript.",
-      image: socialMediaImg,
-      technologies: ["HTML5", "CSS3", "JavaScript", "Local Storage"],
-      category: "web",
-      demoUrl: "https://socialmedia-app-ali.vercel.app/",
-      codeUrl:
-        "https://github.com/Syed-Muhammad-Ali-git/socialmedia-app-html-bootstrap",
-      status: "Completed",
-      features: ["Local Storage", "User Interface", "Social Features"],
-    },
-    {
-      id: 5,
-      title: "JavaScript Assignments",
-      description:
-        "Collection of JavaScript assignments covering core concepts, logic building, and DOM manipulation.",
-      image: javascriptImage,
-      technologies: ["JavaScript", "HTML5", "CSS3"],
-      category: "web",
-      demoUrl: "https://javasscript-assignments.vercel.app/",
-      codeUrl:
-        "https://github.com/Syed-Muhammad-Ali-git/Javasscript-assignments",
-      status: "Completed",
-      features: ["Core JS concepts", "Logic building", "DOM manipulation"],
-    },
-    {
-      id: 6,
-      title: "YouTube Clone",
-      description:
-        "A frontend clone of YouTube built using Tailwind CSS with responsive UI.",
-      image: youtubeImage,
-      technologies: ["HTML5", "Tailwind CSS"],
-      category: "web",
-      demoUrl: "http://tailwind-assignment.surge.sh/youtube-clone/index.html",
-      codeUrl:
-        "https://github.com/Syed-Muhammad-Ali-git/Tailwind-Assignments/tree/master/youtube-clone",
-      status: "Completed",
-      features: ["Responsive design", "Modern UI", "Grid & Flexbox layout"],
-    },
-    {
-      id: 7,
-      title: "Google Clone",
-      description:
-        "Google homepage clone built using HTML and CSS with pixel-perfect layout.",
-      image: googleImg,
-      technologies: ["HTML5", "CSS3"],
-      category: "web",
-      demoUrl: "http://tailwind-assignment.surge.sh/google-ui/index.html",
-      codeUrl: "https://github.com/Syed-Muhammad-Ali-git/Google-Clone",
-      status: "Completed",
-      features: ["Pixel-perfect design", "Responsive layout", "Simple UI"],
-    },
-    {
-      id: 8,
-      title: "Nexcent Website",
-      description: "A modern responsive landing page built using Tailwind CSS.",
-      image: nexcentImg,
-      technologies: ["Tailwind CSS", "HTML5"],
-      category: "web",
-      demoUrl: "https://nexcentclone.surge.sh/",
-      codeUrl: "https://github.com/Syed-Muhammad-Ali-git/Nexcent-Website",
-      status: "Completed",
-      features: ["Landing page", "Responsive design", "Tailwind utilities"],
-    },
-    {
-      id: 9,
-      title: "CSS Animation Showcase",
-      description:
-        "Creative CSS animations demonstrating transitions and keyframes.",
-      image: animationImg,
-      technologies: ["CSS3", "HTML5"],
-      category: "design",
-      demoUrl: "http://animation-website.surge.sh/",
-      codeUrl: "https://github.com/Syed-Muhammad-Ali-git/CSS-Animation",
-      status: "Completed",
-      features: ["Keyframe animations", "Hover effects", "Transitions"],
-    },
-    {
-      id: 10,
-      title: "Text Changer App",
-      description:
-        "A text manipulation tool with features like uppercase, lowercase, trimming spaces, and copy.",
-      image: textChangerImg,
-      technologies: ["React", "Tailwind CSS"],
-      category: "web",
-      demoUrl: "https://text-changer.surge.sh/",
-      codeUrl: "https://github.com/Syed-Muhammad-Ali-git/Text-Changer-App",
-      status: "Completed",
-      features: ["Uppercase & lowercase", "Copy text", "Remove spaces"],
-    },
-
-    {
-      id: 11,
-      title: "OLX Clone",
-      description:
-        "A classifieds marketplace UI (OLX-style) built with HTML, CSS, and JavaScript — lets users browse categories, search/filter listings, view listing details, and contact sellers. Deployed on Surge for a fast static demo.",
-      image: olxImg,
-      technologies: ["JavaScript", "HTML5", "CSS3", "Surge.sh"],
-      category: "web",
-      demoUrl: "http://olx-by-ali.surge.sh/",
-      codeUrl: "https://github.com/Syed-Muhammad-Ali-git/olx-clone", // adjust if your repo name differs
-      status: "Completed",
-      features: [
-        "Responsive marketplace layout",
-        "Search & filter listings",
-        "Category browsing",
-        "Listing details modal/page",
-        "Create & manage listings (UI)",
-        "Contact seller / message modal",
-        "Client-side image previews for uploads",
-      ],
-    },
-
-    {
-      id: 12,
-      title: "Pokémon App",
-      description:
-        "A fun Pokémon app fetching data from Pokémon API and displaying it in a styled UI.",
-      image: pokemonImg,
-      technologies: ["React", "API", "Tailwind CSS"],
-      category: "web",
-      demoUrl: "https://pokemon-clone-lake.vercel.app/",
-      codeUrl: "https://github.com/Syed-Muhammad-Ali-git/Pokemon-App",
-      status: "Completed",
-      features: ["API integration", "Search Pokémon", "Responsive grid"],
-    },
-  ];
-
-  const filters = [
-    { id: "all", label: "All Projects", icon: <Globe className="w-4 h-4" /> },
-    { id: "web", label: "Web Apps", icon: <Code className="w-4 h-4" /> },
-    { id: "mobile", label: "Mobile", icon: <Smartphone className="w-4 h-4" /> },
-    { id: "design", label: "Design", icon: <Palette className="w-4 h-4" /> },
-  ];
-
-  const filteredProjects =
-    activeFilter === "all"
-      ? projects
-      : projects.filter((project) => project.category === activeFilter);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="projects" className="py-20 px-4">
-      <div className="container mx-auto">
-        {/* Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Featured <span className="gradient-text">Projects</span>
+    <section id="projects" className="py-20 sm:py-32">
+      <div className="section-container" ref={ref}>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="font-display text-3xl sm:text-4xl font-bold mb-4">
+            Featured <span className="text-gradient">Projects</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto">
             A showcase of my recent work and personal projects
           </p>
-        </div>
+        </motion.div>
 
-        {/* Filter buttons */}
-        <div className="flex justify-center mb-12">
-          <div className="flex flex-wrap gap-4 p-2 bg-card/50 rounded-full backdrop-blur-sm border border-border/50">
-            {filters.map((filter) => (
-              <button
-                key={filter.id}
-                onClick={() => setActiveFilter(filter.id)}
-                className={`flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                  activeFilter === filter.id
-                    ? "bg-primary text-primary-foreground shadow-glow"
-                    : "hover:bg-card/80 text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                {filter.icon}
-                <span className="hidden sm:inline">{filter.label}</span>
-              </button>
+        {/* React & Next.js Projects */}
+        <div className="mb-16">
+          <motion.h3
+            initial={{ opacity: 0, x: -20 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="font-display text-xl font-semibold mb-8 flex items-center gap-3"
+          >
+            <span className="w-8 h-[2px] bg-primary" />
+            React & Next.js Projects
+          </motion.h3>
+          <div className="grid sm:grid-cols-2 gap-6">
+            {reactProjects.map((project, index) => (
+              <ProjectCard key={project.title} project={project} index={index} isInView={isInView} />
             ))}
           </div>
         </div>
 
-        {/* Projects grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {filteredProjects.length === 0 ? (
-            <div className="col-span-2 text-center text-muted-foreground py-12">
-              No projects found for this category.
-            </div>
-          ) : (
-            filteredProjects.map((project, index) => (
-              <div
-                key={project.id}
-                className="portfolio-card group cursor-pointer overflow-hidden animate-fade-in px-4 sm:px-6"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                {/* Project image */}
-                <div className="relative overflow-hidden rounded-lg mb-6">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                    <a
-                      href={project.demoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3 bg-primary text-primary-foreground rounded-full hover:bg-primary/80 transition-colors duration-300"
-                      title="Live Demo"
-                    >
-                      <Eye size={20} />
-                    </a>
-                    <a
-                      href={project.codeUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3 bg-card text-foreground rounded-full hover:bg-card/80 transition-colors duration-300"
-                      title="View Code"
-                    >
-                      <Github size={20} />
-                    </a>
-                  </div>
-
-                  {/* Status badge */}
-                  <div className="absolute top-4 right-4">
-                    <span
-                      className={`px-3 py-1 rounded-full text-xs font-medium ${
-                        project.status === "Completed"
-                          ? "bg-green-500/20 text-green-400 border border-green-500/30"
-                          : "bg-yellow-500/20 text-yellow-400 border border-yellow-500/30"
-                      }`}
-                    >
-                      {project.status}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Project info */}
-                <div className="space-y-4">
-                  <div>
-                    <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors duration-300">
-                      {project.title}
-                    </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
-                      {/* Mobile short preview */}
-                      <span className="sm:hidden">
-                        {project.description.split(" ").slice(0, 12).join(" ")}…{" "}
-                        <span className="italic text-muted-foreground">
-                          see on desktop
-                        </span>
-                      </span>
-                      <span className="hidden sm:inline">
-                        {project.description}
-                      </span>
-                    </p>
-                  </div>
-
-                  {/* Technologies */}
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech, i) => (
-                      <span
-                        key={i}
-                        className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full border border-primary/20"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Features */}
-                  <div>
-                    <h4 className="font-semibold mb-2 text-sm">
-                      Key Features:
-                    </h4>
-                    <ul className="grid grid-cols-2 gap-1 text-xs text-muted-foreground">
-                      {project.features.map((feature, i) => (
-                        <li key={i} className="flex items-center gap-1">
-                          <span className="text-primary">•</span>
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Action buttons */}
-                  <div className="flex items-center gap-3 pt-2 flex-wrap">
-                    <a
-                      href={project.demoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/80 transition-colors duration-300 text-sm font-medium"
-                    >
-                      <ExternalLink size={16} /> Live Demo
-                    </a>
-                    <a
-                      href={project.codeUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 bg-card/50 border border-border rounded-lg hover:bg-card transition-colors duration-300 text-sm font-medium"
-                    >
-                      <Github size={16} /> Code
-                    </a>
-                  </div>
-                </div>
-              </div>
-            ))
-          )}
-        </div>
-
-        {/* CTA */}
-        <div className="text-center mt-16">
-          <div className="inline-flex items-center gap-2 px-6 py-3 bg-primary/10 rounded-full border border-primary/20">
-            <span className="text-primary font-semibold">
-              🚀 More projects coming soon!
-            </span>
+        {/* Web Development Projects */}
+        <div>
+          <motion.h3
+            initial={{ opacity: 0, x: -20 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="font-display text-xl font-semibold mb-8 flex items-center gap-3"
+          >
+            <span className="w-8 h-[2px] bg-primary" />
+            Web Development Projects
+          </motion.h3>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {webProjects.map((project, index) => (
+              <ProjectCard key={project.title} project={project} index={index + reactProjects.length} isInView={isInView} />
+            ))}
           </div>
-          <p className="text-muted-foreground mt-4">
-            Check out my{" "}
-            <a
-              href="https://github.com/Syed-Muhammad-Ali-git?tab=repositories"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary hover:underline font-medium"
-            >
-              GitHub profile
-            </a>{" "}
-            for more projects and contributions.
-          </p>
         </div>
       </div>
     </section>

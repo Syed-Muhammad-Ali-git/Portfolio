@@ -1,222 +1,134 @@
-import { GraduationCap, Calendar, MapPin } from "lucide-react";
+import { motion } from 'framer-motion';
+import { useInView } from 'framer-motion';
+import { useRef } from 'react';
+import { GraduationCap, Award } from 'lucide-react';
+
+const education = [
+  {
+    institution: 'Ilma University',
+    degree: 'ADP Software Engineering',
+    period: '2023 - Present',
+    description: 'Currently pursuing Associate Degree Program in Software Engineering with focus on modern development practices, programming fundamentals, and software design principles.',
+    current: true,
+  },
+  {
+    institution: 'Government Degree Boys College',
+    degree: 'Intermediate (Pre-Engineering)',
+    period: '2021 - 2023',
+    description: 'Completed Intermediate in Pre-Engineering with strong foundation in Mathematics, Physics, and Chemistry.',
+    current: false,
+  },
+];
+
+const certifications = [
+  {
+    title: 'Full Stack / MERN Stack Development',
+    institution: 'Saylani SMIT',
+    period: '2024 - Present',
+    inProgress: true,
+  },
+  {
+    title: 'Frontend Development',
+    institution: 'Self-Taught',
+    period: '2022 - Present',
+    inProgress: true,
+  },
+];
 
 const Education = () => {
-  const educationData = [
-    {
-      degree: "ADP Software Engineering",
-      institution: "Ilma University",
-      period: "2023 - Present",
-      status: "Current",
-      location: "Karachi, Pakistan",
-      description:
-        "Currently pursuing Associate Degree Program in Software Engineering with focus on modern development practices, programming fundamentals, and software design principles.",
-      highlights: [
-        "Object-Oriented Programming",
-        "Database Management Systems",
-        "Software Engineering Principles",
-        "Web Development Technologies",
-      ],
-      color: "primary",
-    },
-    {
-      degree: "Intermediate (Pre-Engineering)",
-      institution: "Government Degree Boys College",
-      period: "2021 - 2023",
-      status: "Completed",
-      location: "Karachi, Pakistan",
-      description:
-        "Completed Intermediate in Pre-Engineering with strong foundation in Mathematics, Physics, and Chemistry.",
-      highlights: [
-        "Mathematics & Physics",
-        "Analytical Problem Solving",
-        "Scientific Method",
-        "Technical Foundation",
-      ],
-      color: "secondary",
-    },
-    {
-      degree: "Secondary School Certificate (SSC)",
-      institution: "Kamran Public School",
-      period: "2019 - 2021",
-      status: "Completed",
-      location: "Karachi, Pakistan",
-      description:
-        "Completed matriculation with excellent grades, building strong academic foundation.",
-      highlights: [
-        "Academic Excellence",
-        "Core Subjects Mastery",
-        "Leadership Skills",
-        "Communication Skills",
-      ],
-      color: "accent",
-    },
-  ];
-
-  const certifications = [
-    {
-      title: "Full Stack / MERN Stack Development",
-      issuer: "Saylani SMIT",
-      period: "2024 - Present",
-      status: "In Progress",
-      icon: "🚀",
-    },
-    {
-      title: "Frontend Development",
-      issuer: "Self-Taught",
-      period: "2022 - Present",
-      status: "Ongoing",
-      icon: "💻",
-    },
-  ];
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section
-      id="education"
-      className="py-8 px-3 sm:py-16 sm:px-6 lg:py-20 lg:px-8"
-    >
-      <div className="container mx-auto">
-        {/* Heading */}
-        <div className="text-center mb-8 sm:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-3 sm:mb-4">
-            <span className="gradient-text">Education</span> & Learning
+    <section id="education" className="py-20 sm:py-32 bg-secondary/30">
+      <div className="section-container">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="font-display text-3xl sm:text-4xl font-bold mb-4">
+            <span className="text-gradient">Education</span>
           </h2>
-          <p className="text-sm sm:text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto">
             My academic journey and continuous learning path
           </p>
-        </div>
+        </motion.div>
 
-        {/* Education Timeline */}
-        <div className="max-w-4xl mx-auto mb-10 sm:mb-16">
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-4 sm:left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-secondary to-accent"></div>
+        <div className="max-w-3xl mx-auto space-y-6">
+          {/* Formal Education */}
+          {education.map((item, index) => (
+            <motion.div
+              key={item.institution}
+              initial={{ opacity: 0, y: 40 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="project-card p-6 flex gap-4"
+            >
+              <div className="p-3 rounded-lg bg-primary/10 text-primary h-fit">
+                <GraduationCap size={24} />
+              </div>
+              <div className="flex-1">
+                <div className="flex items-start justify-between flex-wrap gap-2">
+                  <div>
+                    <h3 className="font-display text-xl font-semibold mb-1">
+                      {item.degree}
+                    </h3>
+                    <p className="text-primary font-medium">{item.institution}</p>
+                  </div>
+                  {item.current && (
+                    <span className="px-3 py-1 text-xs font-medium rounded-full bg-green-500/10 text-green-500">
+                      Current
+                    </span>
+                  )}
+                </div>
+                <p className="text-sm text-muted-foreground mt-1 mb-3">{item.period}</p>
+                <p className="text-muted-foreground text-sm">{item.description}</p>
+              </div>
+            </motion.div>
+          ))}
 
-            {educationData.map((edu, index) => (
-              <div
-                key={index}
-                className="relative flex flex-col sm:flex-row items-start gap-3 sm:gap-8 mb-6 sm:mb-12 animate-slide-up w-full"
-                style={{ animationDelay: `${index * 0.2}s` }}
-              >
-                {/* Timeline dot */}
-                <div
-                  className={`relative z-10 w-8 h-8 sm:w-16 sm:h-16 rounded-full flex items-center justify-center bg-${edu.color}/20 border-2 border-${edu.color} shadow-glow flex-shrink-0`}
+          {/* Certifications */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="pt-8"
+          >
+            <h3 className="font-display text-xl font-semibold mb-6 flex items-center gap-3">
+              <span className="w-8 h-[2px] bg-primary" />
+              Certifications & Courses
+            </h3>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {certifications.map((cert, index) => (
+                <motion.div
+                  key={cert.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
+                  className="project-card p-5 flex gap-4"
                 >
-                  <GraduationCap
-                    className={`w-5 h-5 sm:w-8 sm:h-8 text-${edu.color}`}
-                  />
-                </div>
-
-                {/* Card Content */}
-                <div className="portfolio-card w-full sm:w-[calc(100%-4rem)] px-4 sm:px-6">
-                  {/* Header */}
-                  <div className="flex flex-wrap items-start justify-between gap-2 sm:gap-4 mb-2 sm:mb-4">
-                    <div>
-                      <h3 className="text-base sm:text-xl font-bold mb-1 sm:mb-2">
-                        {edu.degree}
-                      </h3>
-                      <h4 className="text-sm sm:text-lg text-primary font-semibold mb-1 sm:mb-2">
-                        {edu.institution}
-                      </h4>
-                    </div>
-                    <div className="flex flex-col items-end">
-                      <span
-                        className={`px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-xs sm:text-sm font-medium ${
-                          edu.status === "Current"
-                            ? "bg-primary/20 text-primary"
-                            : "bg-secondary/20 text-secondary-foreground"
-                        }`}
-                      >
-                        {edu.status}
-                      </span>
-                    </div>
+                  <div className="p-2 rounded-lg bg-primary/10 text-primary h-fit">
+                    <Award size={20} />
                   </div>
-
-                  {/* Period & Location */}
-                  <div className="flex flex-wrap gap-2 sm:gap-4 text-xs sm:text-sm text-muted-foreground mb-2 sm:mb-4">
-                    <div className="flex items-center gap-1 sm:gap-2">
-                      <Calendar size={12} className="sm:w-4 sm:h-4" />
-                      <span>{edu.period}</span>
-                    </div>
-                    <div className="flex items-center gap-1 sm:gap-2">
-                      <MapPin size={12} className="sm:w-4 sm:h-4" />
-                      <span>{edu.location}</span>
-                    </div>
-                  </div>
-
-                  {/* Description */}
-                  <p className="text-xs sm:text-base text-muted-foreground mb-2 sm:mb-4">
-                    <span className="sm:hidden">
-                      {edu.description.split(" ").slice(0, 12).join(" ")}…{" "}
-                      <span className="italic text-muted-foreground">
-                        see on desktop
-                      </span>
-                    </span>
-                    <span className="hidden sm:block">{edu.description}</span>
-                  </p>
-
-                  {/* Highlights */}
-                  <div className="flex flex-wrap gap-1 sm:gap-2">
-                    <span className="sm:hidden text-[10px] text-muted-foreground italic">
-                      see highlights on desktop
-                    </span>
-                    <div className="hidden sm:flex flex-wrap gap-2">
-                      {edu.highlights.map((highlight, i) => (
-                        <span
-                          key={i}
-                          className="px-2 py-0.5 sm:px-3 sm:py-1 bg-primary/10 text-primary text-xs sm:text-sm rounded-full border border-primary/20"
-                        >
-                          {highlight}
+                  <div>
+                    <h4 className="font-display font-semibold mb-1">{cert.title}</h4>
+                    <p className="text-sm text-primary">{cert.institution}</p>
+                    <div className="flex items-center gap-2 mt-2">
+                      <span className="text-xs text-muted-foreground">{cert.period}</span>
+                      {cert.inProgress && (
+                        <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-primary/10 text-primary">
+                          In Progress
                         </span>
-                      ))}
+                      )}
                     </div>
                   </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Certifications */}
-        <div className="max-w-4xl mx-auto">
-          <h3 className="text-lg sm:text-2xl font-bold text-center mb-6 sm:mb-8">
-            Certifications & <span className="gradient-text">Courses</span>
-          </h3>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-6">
-            {certifications.map((cert, index) => (
-              <div
-                key={index}
-                className="portfolio-card w-full px-4 sm:px-6 animate-bounce-in"
-                style={{ animationDelay: `${index * 0.3}s` }}
-              >
-                <div className="flex items-start gap-2 sm:gap-4">
-                  <div className="text-xl sm:text-3xl">{cert.icon}</div>
-                  <div className="flex-1">
-                    <h4 className="font-semibold mb-1 sm:mb-2 text-sm sm:text-base">
-                      {cert.title}
-                    </h4>
-                    <p className="text-primary font-medium mb-1 sm:mb-2 text-xs sm:text-base">
-                      {cert.issuer}
-                    </p>
-                    <div className="flex items-center justify-between">
-                      <span className="text-[10px] sm:text-sm text-muted-foreground">
-                        {cert.period}
-                      </span>
-                      <span
-                        className={`px-2 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs ${
-                          cert.status === "In Progress"
-                            ? "bg-primary/20 text-primary"
-                            : "bg-secondary/20 text-secondary-foreground"
-                        }`}
-                      >
-                        {cert.status}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
