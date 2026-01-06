@@ -1,14 +1,28 @@
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 
 const About = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" className="py-20 sm:py-32">
+    <section id="about" className="py-10">
       <div className="section-container">
+        {/* Profile Image */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mb-8"
+        >
+          <img
+            src="/Ali-img.jpeg"
+            alt="Syed Muhammad Ali"
+            className="w-48 h-48 rounded-full mx-auto border-4 border-primary object-cover shadow-lg"
+          />
+        </motion.div>
+
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 40 }}
@@ -20,10 +34,13 @@ const About = () => {
             About <span className="text-gradient">Me</span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            I'm Syed Muhammad Ali, a passionate Frontend Developer currently pursuing ADP in Software Engineering from Ilma University. 
-            I have strong skills in modern web technologies and am dedicated to creating beautiful, responsive web applications.
-            I have experience in HTML, CSS, JavaScript, React, Next.js and modern frontend frameworks. 
-            Currently enrolled in a Full Stack / MERN Stack Development course at Saylani SMIT.
+            I'm Syed Muhammad Ali, a passionate Frontend Developer currently
+            pursuing ADP in Software Engineering from Ilma University. I have
+            strong skills in modern web technologies and am dedicated to
+            creating beautiful, responsive web applications. I have experience
+            in HTML, CSS, JavaScript, React, Next.js and modern frontend
+            frameworks. Currently enrolled in a Full Stack / MERN Stack
+            Development course at Saylani SMIT.
           </p>
         </motion.div>
       </div>
