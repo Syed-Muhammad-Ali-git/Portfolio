@@ -1,29 +1,46 @@
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { Code2, Palette, Wrench } from 'lucide-react';
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+import { Code2, Palette, Wrench } from "lucide-react";
 
 const skillCategories = [
   {
-    title: 'Frontend Core',
+    title: "Frontend Core",
     icon: Code2,
-    skills: ['React.js', 'Next.js', 'JavaScript (ES6+)', 'TypeScript', 'HTML5', 'CSS3'],
+    skills: [
+      "React.js",
+      "Next.js",
+      "JavaScript (ES6+)",
+      "TypeScript",
+      "C-Language",
+      "Wordpress",
+      "MS Office",
+      "HTML5",
+      "CSS3",
+    ],
   },
   {
-    title: 'UI & Styling',
+    title: "UI & Styling",
     icon: Palette,
-    skills: ['Tailwind CSS', 'Material UI', 'Mantine UI', 'Bootstrap'],
+    skills: ["Tailwind CSS", "Material UI", "Mantine UI", "Bootstrap"],
   },
   {
-    title: 'Tools & Integration',
+    title: "Tools & Integration",
     icon: Wrench,
-    skills: ['REST API', 'Firebase', 'Figma to Code', 'Git & GitHub'],
+    skills: [
+      "REST API",
+      "Firebase",
+      "Node.js",
+      "Express.js",
+      "Figma to Code",
+      "Git & GitHub",
+    ],
   },
 ];
 
 const Skills = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <section id="skills" className="py-20 sm:py-32 bg-secondary/30">
@@ -56,7 +73,9 @@ const Skills = () => {
                 <div className="p-2 rounded-lg bg-primary/10 text-primary">
                   <category.icon size={24} />
                 </div>
-                <h3 className="font-display text-lg font-semibold">{category.title}</h3>
+                <h3 className="font-display text-lg font-semibold">
+                  {category.title}
+                </h3>
               </div>
               <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill) => (

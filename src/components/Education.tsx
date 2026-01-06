@@ -1,43 +1,45 @@
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { GraduationCap, Award } from 'lucide-react';
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+import { GraduationCap, Award } from "lucide-react";
 
 const education = [
   {
-    institution: 'Ilma University',
-    degree: 'ADP Software Engineering',
-    period: '2023 - Present',
-    description: 'Currently pursuing Associate Degree Program in Software Engineering with focus on modern development practices, programming fundamentals, and software design principles.',
+    institution: "Ilma University",
+    degree: "ADP Software Engineering",
+    period: "2025 - Present",
+    description:
+      "Currently pursuing Associate Degree Program in Software Engineering with focus on modern development practices, programming fundamentals, and software design principles.",
     current: true,
   },
   {
-    institution: 'Government Degree Boys College',
-    degree: 'Intermediate (Pre-Engineering)',
-    period: '2021 - 2023',
-    description: 'Completed Intermediate in Pre-Engineering with strong foundation in Mathematics, Physics, and Chemistry.',
+    institution: "Government Degree Boys College",
+    degree: "Intermediate (Pre-Engineering)",
+    period: "2022 - 2024",
+    description:
+      "Completed Intermediate in Pre-Engineering with strong foundation in Mathematics, Physics, and Chemistry.",
     current: false,
   },
 ];
 
 const certifications = [
   {
-    title: 'Full Stack / MERN Stack Development',
-    institution: 'Saylani SMIT',
-    period: '2024 - Present',
+    title: "Full Stack / MERN Stack Development",
+    institution: "Saylani SMIT",
+    period: "2024 - Present",
     inProgress: true,
   },
   {
-    title: 'Frontend Development',
-    institution: 'Self-Taught',
-    period: '2022 - Present',
-    inProgress: true,
+    title: "Frontend Development",
+    institution: "Self-Taught",
+    period: "2022 - Present",
+    completed: true,
   },
 ];
 
 const Education = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <section id="education" className="py-20 sm:py-32 bg-secondary/30">
@@ -76,7 +78,9 @@ const Education = () => {
                     <h3 className="font-display text-xl font-semibold mb-1">
                       {item.degree}
                     </h3>
-                    <p className="text-primary font-medium">{item.institution}</p>
+                    <p className="text-primary font-medium">
+                      {item.institution}
+                    </p>
                   </div>
                   {item.current && (
                     <span className="px-3 py-1 text-xs font-medium rounded-full bg-green-500/10 text-green-500">
@@ -84,8 +88,12 @@ const Education = () => {
                     </span>
                   )}
                 </div>
-                <p className="text-sm text-muted-foreground mt-1 mb-3">{item.period}</p>
-                <p className="text-muted-foreground text-sm">{item.description}</p>
+                <p className="text-sm text-muted-foreground mt-1 mb-3">
+                  {item.period}
+                </p>
+                <p className="text-muted-foreground text-sm">
+                  {item.description}
+                </p>
               </div>
             </motion.div>
           ))}
@@ -114,13 +122,22 @@ const Education = () => {
                     <Award size={20} />
                   </div>
                   <div>
-                    <h4 className="font-display font-semibold mb-1">{cert.title}</h4>
+                    <h4 className="font-display font-semibold mb-1">
+                      {cert.title}
+                    </h4>
                     <p className="text-sm text-primary">{cert.institution}</p>
                     <div className="flex items-center gap-2 mt-2">
-                      <span className="text-xs text-muted-foreground">{cert.period}</span>
+                      <span className="text-xs text-muted-foreground">
+                        {cert.period}
+                      </span>
                       {cert.inProgress && (
                         <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-primary/10 text-primary">
                           In Progress
+                        </span>
+                      )}
+                      {cert.completed && (
+                        <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-green-500/10 text-green-500">
+                          Completed
                         </span>
                       )}
                     </div>

@@ -1,9 +1,9 @@
-import { motion } from 'framer-motion';
-import { ArrowDown, Github, Linkedin, Mail, Facebook } from 'lucide-react';
+import { motion } from "framer-motion";
+import { ArrowDown, Github, Linkedin, Mail, Facebook } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center hero-glow pt-16">
+    <section className="relative min-h-screen flex items-center justify-center hero-glow pt-8">
       <div className="section-container py-20">
         <div className="max-w-3xl mx-auto text-center">
           {/* Status Badge */}
@@ -14,7 +14,9 @@ const Hero = () => {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary border border-border mb-8"
           >
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-            <span className="text-sm text-muted-foreground">Available for work</span>
+            <span className="text-sm text-muted-foreground">
+              Available for work
+            </span>
           </motion.div>
 
           {/* Main Heading */}
@@ -36,8 +38,9 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto"
           >
-            Passionate about creating beautiful, responsive web applications. 
-            Currently pursuing ADP in Software Engineering and learning MERN Stack Development.
+            Passionate about creating beautiful, responsive web applications.
+            Currently pursuing ADP in Software Engineering and learning MERN
+            Stack Development.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -47,11 +50,14 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
           >
-            <a href="#projects" className="btn-primary w-full sm:w-auto text-center">
+            <a
+              href="#projects"
+              className="btn-primary w-full sm:w-auto text-center"
+            >
               View My Work
             </a>
-            <a 
-              href="https://ali-portfolio-nine.vercel.app/Ali_CV.pdf" 
+            <a
+              href="../../public/Ali_CV.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-outline w-full sm:w-auto text-center"
@@ -95,7 +101,9 @@ const Hero = () => {
               <Facebook size={20} />
             </a>
             <a
-              href="mailto:syeadmuhammedalimazhar@gmail.com"
+              href="https://mail.google.com/mail/?view=cm&to=syeadmuhammedalimazhar@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="p-3 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors"
               aria-label="Email"
             >

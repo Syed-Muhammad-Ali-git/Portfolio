@@ -1,83 +1,136 @@
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { ExternalLink, Github, Folder } from 'lucide-react';
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+import { ExternalLink, Github, Folder } from "lucide-react";
 
 const reactProjects = [
   {
-    title: 'AppMash Website',
-    description: 'A modern web application UI built for the AppMash platform with responsive design.',
-    tech: ['React', 'JavaScript', 'CSS3'],
-    github: '',
-    live: 'https://app-mash.vercel.app/',
+    title: "AppMash Website",
+    description:
+      "A modern web application UI built for the AppMash platform with responsive design.",
+    tech: ["Next.js", "TypeScript", "Tailwind Css", "Material ui"],
+    github: "",
+    live: "https://app-mash.vercel.app/",
   },
   {
-    title: 'MyBindle Website',
-    description: 'A website UI for MyBindle platform with React components and responsive design.',
-    tech: ['React', 'JavaScript', 'CSS3'],
-    github: 'https://github.com/Syed-Muhammad-Ali-git/Mybindle-react',
-    live: 'https://my-bindle-website-react.vercel.app/',
+    title: "CoreStock Website",
+    description:
+      "A modern web application UI built for the Super Market platform with responsive design.",
+    tech: [
+      "Next.js",
+      "Typescript",
+      "Tailwind Css",
+      "Mantine.dev",
+      "Material ui",
+      "Redux",
+    ],
+    github: "",
+    live: "https://core-stock.vercel.app/",
   },
   {
-    title: 'Text Changer App',
-    description: 'A text manipulation tool with features like uppercase, lowercase, trimming spaces, and copy.',
-    tech: ['React', 'Tailwind CSS'],
-    github: 'https://github.com/Syed-Muhammad-Ali-git/Text-Changer-App',
-    live: 'https://text-changer.surge.sh/',
+    title: "T3ALL Restaurant Website",
+    description:
+      "A restaurant-style website UI with responsive layout and interactive elements.",
+    tech: ["React.js", "Tailwind Css", "JavaScript"],
+    github: "",
+    live: "https://t3aldevaliui.netlify.app/",
   },
   {
-    title: 'Pokémon App',
-    description: 'A fun Pokémon app fetching data from Pokémon API and displaying it in a styled UI.',
-    tech: ['React', 'API', 'Tailwind CSS'],
-    github: 'https://github.com/Syed-Muhammad-Ali-git/Pokemon-App',
-    live: 'https://pokemon-clone-lake.vercel.app/',
+    title: "React Portfolio Website",
+    description: "My 1sr React Portfolio.",
+    tech: ["React", "Typescript", "Tailwind Css"],
+    github: "https://github.com/Syed-Muhammad-Ali-git/old-react-portfolio",
+    live: "https://old-react-portfolio-puce.vercel.app/",
+  },
+  {
+    title: "MyBindle Website",
+    description:
+      "A website UI for MyBindle platform with React components and responsive design.",
+    tech: ["React", "JavaScript", "CSS3"],
+    github: "https://github.com/Syed-Muhammad-Ali-git/Mybindle-react",
+    live: "https://my-bindle-website-react.vercel.app/",
+  },
+  {
+    title: "Text Changer App",
+    description:
+      "A text manipulation tool with features like uppercase, lowercase, trimming spaces, and copy.",
+    tech: ["React", "Tailwind CSS"],
+    github: "https://github.com/Syed-Muhammad-Ali-git/Text-Changer-App",
+    live: "https://text-changer.surge.sh/",
   },
 ];
 
 const webProjects = [
   {
-    title: 'T3ALL Restaurant Website',
-    description: 'A restaurant-style website UI with responsive layout and interactive elements.',
-    tech: ['HTML5', 'CSS3', 'JavaScript'],
-    github: '',
-    live: 'https://t3aldevaliui.netlify.app/',
+    title: "Social Media App",
+    description:
+      "A social media application with local storage using HTML, CSS, and JavaScript.",
+    tech: ["HTML5", "CSS3", "JavaScript", "Local Storage"],
+    github:
+      "https://github.com/Syed-Muhammad-Ali-git/socialmedia-app-html-bootstrap",
+    live: "https://socialmedia-app-ali.vercel.app/",
   },
   {
-    title: 'Social Media App',
-    description: 'A social media application with local storage using HTML, CSS, and JavaScript.',
-    tech: ['HTML5', 'CSS3', 'JavaScript', 'Local Storage'],
-    github: 'https://github.com/Syed-Muhammad-Ali-git/socialmedia-app-html-bootstrap',
-    live: 'https://socialmedia-app-ali.vercel.app/',
+    title: "OLX Clone",
+    description:
+      "A classifieds marketplace UI with search/filter listings, category browsing, and listing details.",
+    tech: ["HTML5", "CSS3", "JavaScript", "Bootstrap"],
+    github: "https://github.com/Syed-Muhammad-Ali-git/olx-clone",
+    live: "http://olx-by-ali.surge.sh/",
   },
   {
-    title: 'OLX Clone',
-    description: 'A classifieds marketplace UI with search/filter listings, category browsing, and listing details.',
-    tech: ['JavaScript', 'HTML5', 'CSS3'],
-    github: 'https://github.com/Syed-Muhammad-Ali-git/olx-clone',
-    live: 'http://olx-by-ali.surge.sh/',
+    title: "YouTube Clone",
+    description:
+      "A frontend clone of YouTube built using Tailwind CSS with responsive UI.",
+    tech: ["HTML5", "Tailwind CSS"],
+    github:
+      "https://github.com/Syed-Muhammad-Ali-git/Tailwind-Assignments/tree/master/youtube-clone",
+    live: "http://tailwind-assignment.surge.sh/youtube-clone/index.html",
   },
   {
-    title: 'YouTube Clone',
-    description: 'A frontend clone of YouTube built using Tailwind CSS with responsive UI.',
-    tech: ['HTML5', 'Tailwind CSS'],
-    github: 'https://github.com/Syed-Muhammad-Ali-git/Tailwind-Assignments/tree/master/youtube-clone',
-    live: 'http://tailwind-assignment.surge.sh/youtube-clone/index.html',
+    title: "Pokémon App",
+    description:
+      "A fun Pokémon app fetching data from Pokémon API and displaying it in a styled UI.",
+    tech: ["Html", "Css", "Tailwind CSS", "Js"],
+    github: "https://github.com/Syed-Muhammad-Ali-git/Pokemon-App",
+    live: "https://pokemon-clone-lake.vercel.app/",
   },
   {
-    title: 'Google Clone',
-    description: 'Google homepage clone built using HTML and CSS with pixel-perfect layout.',
-    tech: ['HTML5', 'CSS3'],
-    github: 'https://github.com/Syed-Muhammad-Ali-git/Google-Clone',
-    live: 'http://tailwind-assignment.surge.sh/google-ui/index.html',
+    title: "Google Clone",
+    description:
+      "Google homepage clone built using HTML and CSS with pixel-perfect layout.",
+    tech: ["HTML5", "CSS3"],
+    github: "https://github.com/Syed-Muhammad-Ali-git/Google-Clone",
+    live: "http://tailwind-assignment.surge.sh/google-ui/index.html",
   },
   {
-    title: 'Nexcent Website',
-    description: 'A modern responsive landing page built using Tailwind CSS.',
-    tech: ['Tailwind CSS', 'HTML5'],
-    github: 'https://github.com/Syed-Muhammad-Ali-git/Nexcent-Website',
-    live: 'https://nexcentclone.surge.sh/',
+    title: "CSS Animation Showcase",
+    description:
+      "Creative CSS animations demonstrating transitions and keyframes.",
+    tech: ["HTML5", "CSS3", "Bootstrap"],
+    github: "https://github.com/Syed-Muhammad-Ali-git/Animation-website",
+    live: "https://animation-website.surge.sh/",
+  },
+  {
+    title: "Nexcent Website",
+    description: "A modern responsive landing page built using Tailwind CSS.",
+    tech: ["Tailwind CSS", "HTML5"],
+    github: "https://github.com/Syed-Muhammad-Ali-git/Nexcent-Website",
+    live: "https://nexcentclone.surge.sh/",
   },
 ];
+
+// const LandingPages = [
+//   {
+//     title: "Social Media App",
+//     description:
+//       "A social media application with local storage using HTML, CSS, and JavaScript.",
+//     tech: ["HTML5", "CSS3", "JavaScript", "Local Storage"],
+//     github:
+//       "https://github.com/Syed-Muhammad-Ali-git/socialmedia-app-html-bootstrap",
+//     live: "https://socialmedia-app-ali.vercel.app/",
+//   },
+// ];
 
 interface ProjectCardProps {
   project: {
@@ -138,7 +191,10 @@ const ProjectCard = ({ project, index, isInView }: ProjectCardProps) => (
     <div className="p-6 pt-4">
       <div className="flex flex-wrap gap-2">
         {project.tech.map((tech) => (
-          <span key={tech} className="text-xs text-muted-foreground font-medium">
+          <span
+            key={tech}
+            className="text-xs text-muted-foreground font-medium"
+          >
             {tech}
           </span>
         ))}
@@ -149,7 +205,7 @@ const ProjectCard = ({ project, index, isInView }: ProjectCardProps) => (
 
 const Projects = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <section id="projects" className="py-20 sm:py-32">
@@ -181,7 +237,12 @@ const Projects = () => {
           </motion.h3>
           <div className="grid sm:grid-cols-2 gap-6">
             {reactProjects.map((project, index) => (
-              <ProjectCard key={project.title} project={project} index={index} isInView={isInView} />
+              <ProjectCard
+                key={project.title}
+                project={project}
+                index={index}
+                isInView={isInView}
+              />
             ))}
           </div>
         </div>
@@ -199,7 +260,12 @@ const Projects = () => {
           </motion.h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {webProjects.map((project, index) => (
-              <ProjectCard key={project.title} project={project} index={index + reactProjects.length} isInView={isInView} />
+              <ProjectCard
+                key={project.title}
+                project={project}
+                index={index + reactProjects.length}
+                isInView={isInView}
+              />
             ))}
           </div>
         </div>

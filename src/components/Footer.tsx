@@ -9,7 +9,7 @@ const Footer = () => {
             © {currentYear} Ali. All rights reserved.
           </p>
           <p className="text-sm text-muted-foreground">
-            Built with <span className="text-primary">♥</span> using React & Tailwind CSS
+            Built with React & Tailwind CSS
           </p>
         </div>
       </div>
