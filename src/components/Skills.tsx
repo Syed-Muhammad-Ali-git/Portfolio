@@ -22,7 +22,16 @@ const skillCategories = [
   {
     title: "UI & Styling",
     icon: Palette,
-    skills: ["Tailwind CSS", "Material UI", "Mantine UI", "Bootstrap"],
+    skills: [
+      "Tailwind CSS",
+      "Material UI",
+      "Mantine UI",
+      "Bootstrap",
+      "Shade Cn",
+      "MDB Bootstrap",
+      "Ant Design",
+      "Figma",
+    ],
   },
   {
     title: "Tools & Integration",
