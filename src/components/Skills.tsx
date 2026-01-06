@@ -30,6 +30,8 @@ const skillCategories = [
     skills: [
       "REST API",
       "Firebase",
+      "Postman",
+      "Thunder Client",
       "Node.js",
       "Express.js",
       "Figma to Code",
