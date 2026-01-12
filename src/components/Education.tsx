@@ -26,13 +26,25 @@ const certifications = [
   {
     title: "Full Stack / MERN Stack Development",
     institution: "Saylani SMIT",
-    period: "2024 - Present",
+    period: "2025 - Present",
     inProgress: true,
   },
   {
     title: "Frontend Development",
-    institution: "Self-Taught",
-    period: "2022 - Present",
+    institution: "Farooq-e-Azam Institute",
+    period: "2024 October To 2025 January ",
+    completed: true,
+  },
+  {
+    title: "Wordpress Development",
+    institution: "Fixit Institute",
+    period: "2024 Feburary To 2024 April",
+    completed: true,
+  },
+  {
+    title: "C.I.T",
+    institution: "Info Channel",
+    period: "2023 March To 2023 August",
     completed: true,
   },
 ];
