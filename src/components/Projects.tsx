@@ -7,15 +7,28 @@ const reactProjects = [
   {
     title: "AppMash Website",
     description:
-      "A modern web application UI built for the AppMash platform with responsive design.",
+      "A Modern web application UI built for the AppMash platform with responsive design.",
     tech: ["Next.js", "TypeScript", "Tailwind Css", "Material ui"],
     github: "",
     live: "https://app-mash.vercel.app/",
   },
   {
-    title: "CoreStock Website",
+    title: "CoreStock Admin Panel UI",
+    description: "A Modern web application UI .",
+    tech: [
+      "Next.js",
+      "Typescript",
+      "Tailwind Css",
+      "Mantine.dev",
+      "Material ui",
+    ],
+    github: "",
+    live: "https://corestock-admin-ui.vercel.app/",
+  },
+  {
+    title: "CoreStock Admin Panel",
     description:
-      "A modern web application UI built for the Super Market platform with responsive design.",
+      "A Modern Full stack Admin Panel in this website My role is Senior Frontend Developer.",
     tech: [
       "Next.js",
       "Typescript",
@@ -37,8 +50,8 @@ const reactProjects = [
   },
   {
     title: "React Portfolio Website",
-    description: "My 1sr React Portfolio.",
-    tech: ["React", "Typescript", "Tailwind Css"],
+    description: "My 1st React Portfolio.",
+    tech: ["React.js", "Typescript", "Tailwind Css"],
     github: "https://github.com/Syed-Muhammad-Ali-git/old-react-portfolio",
     live: "https://old-react-portfolio-puce.vercel.app/",
   },
@@ -46,7 +59,7 @@ const reactProjects = [
     title: "MyBindle Website",
     description:
       "A website UI for MyBindle platform with React components and responsive design.",
-    tech: ["React", "JavaScript", "CSS3"],
+    tech: ["React.js", "JavaScript", "Tailwind CSS", "CSS3"],
     github: "https://github.com/Syed-Muhammad-Ali-git/Mybindle-react",
     live: "https://my-bindle-website-react.vercel.app/",
   },
@@ -54,7 +67,7 @@ const reactProjects = [
     title: "Text Changer App",
     description:
       "A text manipulation tool with features like uppercase, lowercase, trimming spaces, and copy.",
-    tech: ["React", "Tailwind CSS"],
+    tech: ["React.js", "Tailwind CSS"],
     github: "https://github.com/Syed-Muhammad-Ali-git/Text-Changer-App",
     live: "https://text-changer.surge.sh/",
   },
