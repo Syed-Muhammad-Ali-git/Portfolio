@@ -23,7 +23,7 @@ const reactProjects = [
       "Material ui",
     ],
     github: "",
-    live: "https://corestock-admin-ui.vercel.app/",
+    live: "https://core-stock-admin-ui.vercel.app/login",
   },
   {
     title: "CoreStock Admin Panel",
@@ -38,7 +38,7 @@ const reactProjects = [
       "Redux",
     ],
     github: "",
-    live: "https://core-stock.vercel.app/",
+    live: "https://corestock-admin-panel.vercel.app/",
   },
   {
     title: "T3ALL Restaurant Website",
