@@ -57,11 +57,10 @@ const Hero = () => {
               View My Work
             </a>
             <a
-              href="../../public/SYED MUHAMMAD ALI (1).pdf"
+              href="/public/SYED-MUHAMMAD-ALI.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-outline w-full sm:w-auto text-center"
-              download={true}
             >
               Get Resume
             </a>
