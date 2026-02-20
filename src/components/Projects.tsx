@@ -5,6 +5,41 @@ import { ExternalLink, Github, Folder } from "lucide-react";
 
 const reactProjects = [
   {
+    title: "CoreStock Web App",
+    description:
+      "A Modern Full stack WebApp with multiple roles and mutiple users and My role is Senior Frontend Developer.",
+    tech: [
+      "Next.js",
+      "Typescript",
+      "Tailwind Css",
+      "Mantine.dev",
+      "Material ui",
+      "Redux",
+      "Vercel",
+    ],
+    github: "",
+    live: "https://corestock-web.vercel.app/",
+  },
+  {
+    title: "Road Helper",
+    description:
+      "This is My personal Fullstack Project with Full Frontend and Firebase.",
+    tech: [
+      "Next.js",
+      "Typescript",
+      "Tailwind Css",
+      "Mantine.dev",
+      "Material ui",
+      "Redux",
+      "Firebase",
+      "Vercel",
+      "Map & Location",
+      "3 Role Different pages and dashboards with security",
+    ],
+    github: "https://github.com/Syed-Muhammad-Ali-git/Road-Helper",
+    live: "https://corestock-web.vercel.app/",
+  },
+  {
     title: "AppMash Website",
     description:
       "A Modern web application UI built for the AppMash platform with responsive design.",
@@ -21,6 +56,7 @@ const reactProjects = [
       "Tailwind Css",
       "Mantine.dev",
       "Material ui",
+      "Vercel",
     ],
     github: "",
     live: "https://core-stock-admin-ui.vercel.app/login",
@@ -36,6 +72,7 @@ const reactProjects = [
       "Mantine.dev",
       "Material ui",
       "Redux",
+      "Vercel",
     ],
     github: "",
     live: "https://corestock-admin-panel.vercel.app/",
