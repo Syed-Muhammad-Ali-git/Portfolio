@@ -20,6 +20,13 @@ const education = [
       "Completed Intermediate in Pre-Engineering with strong foundation in Mathematics, Physics, and Chemistry.",
     current: false,
   },
+  {
+    institution: "Kamran Public School",
+    degree: "Matric in Computer Science",
+    period: "2008 - 2021",
+    description: "Completed Matriculation degree with A-Grade.",
+    current: false,
+  },
 ];
 
 const certifications = [
