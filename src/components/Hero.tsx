@@ -57,7 +57,7 @@ const Hero = () => {
               View My Work
             </a>
             <a
-              href="/public/SYED-MUHAMMAD-ALI.pdf"
+              href="/SYED-MUHAMMAD-ALI.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-outline w-full sm:w-auto text-center"
